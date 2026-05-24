@@ -1,0 +1,116 @@
+project/
+├── src/
+│   ├── app.js
+│   ├── server.js
+│   │
+│   ├── modules/
+│   ├── middlewares/
+│   ├── database/
+│   ├── utils/
+│   ├── config/
+│   └── routes/
+│
+├── public/
+│
+├── .env
+├── .env.example
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
+-------------------------------------------------------
+
+project/
+├── src/
+│   │
+│   ├── app.js
+│   ├── server.js
+│   │
+│   ├── modules/
+│   │   │
+│   │   ├── orders/
+│   │   │   ├── order.controller.js
+│   │   │   ├── order.service.js
+│   │   │   ├── order.repository.js
+│   │   │   ├── order.mapper.js
+│   │   │   ├── order.validation.js
+│   │   │   └── order.routes.js
+│   │   │
+│   │   ├── users/
+│   │   │   ├── user.controller.js
+│   │   │   ├── user.service.js
+│   │   │   ├── user.repository.js
+│   │   │   ├── user.validation.js
+│   │   │   └── user.routes.js
+│   │   │
+│   │   └── auth/
+│   │       ├── auth.controller.js
+│   │       ├── auth.service.js
+│   │       ├── auth.validation.js
+│   │       └── auth.routes.js
+│   │
+│   ├── middlewares/
+│   │   ├── auth.middleware.js
+│   │   ├── admin.middleware.js
+│   │   └── error.middleware.js
+│   │
+│   ├── database/
+│   │   ├── connection.js
+│   │   ├── sync.js
+│   │   ├── migrations/
+│   │   └── seeds/
+│   │
+│   ├── utils/
+│   │   ├── AppError.js
+│   │   └── generateToken.js
+│   │
+│   ├── config/
+│   │   ├── env.js
+│   │   └── jwt.js
+│   │
+│   └── routes/
+│       └── index.js
+│
+├── public/
+│   ├── assets/
+│   │   ├── css/
+│   │   ├── js/
+│   │   ├── images/
+│   │   ├── fonts/
+│   │   └── icons/
+│   │
+│   └── uploads/
+│
+├── .env
+├── .env.example
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
+-------------------------------------------------------
+
+FLUXO:
+
+REQUEST
+   ↓
+Routes
+   ↓
+Validation (middleware)
+   ↓
+Controller
+   ↓
+Service
+   ↓
+Repository
+   ↓
+Database
+   ↓
+Mapper (opcional)
+   ↓
+Repository
+   ↓
+Service
+   ↓
+Controller
+   ↓
+View/API Response

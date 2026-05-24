@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>500 — Erro Interno do Servidor</title>
+	<style>
+		:root{--bg:#0f1724;--card:#0b1220;--accent:#ff6b6b;--muted:#9aa4b2}
+		*{box-sizing:border-box}
+		body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#071226 0%,#0b1624 100%);color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+		.card{background:rgba(255,255,255,0.03);padding:40px;border-radius:12px;max-width:900px;width:100%;box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03);text-align:center}
+		h1{font-size:96px;margin:0 0 8px;color:var(--accent)}
+		h2{margin:0 0 16px;font-weight:600}
+		p{margin:0 0 18px;color:var(--muted)}
+		pre.stack{background:#02101a;color:#cfeef5;padding:12px;border-radius:8px;text-align:left;overflow:auto;max-height:240px}
+		a.home{display:inline-block;margin-top:18px;padding:10px 18px;border-radius:8px;background:rgba(255,255,255,0.04);color:inherit;text-decoration:none;border:1px solid rgba(255,255,255,0.04)}
+	</style>
+</head>
+<body>
+	<div class="card">
+		<h1>500</h1>
+		<h2>Erro Interno do Servidor</h2>
+		<p><%= message || 'Ocorreu um erro no servidor.' %></p>
+
+		<% if (error && error.stack) { %>
+			<pre class="stack"><%= error.stack %></pre>
+		<% } %>
+
+		<a href="/" class="home">Voltar para a página inicial</a>
+	</div>
+</body>
+</html>
