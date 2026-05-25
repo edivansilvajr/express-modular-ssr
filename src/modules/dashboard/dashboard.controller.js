@@ -4,7 +4,6 @@ module.exports = {
     },
 
     users: (req, res) => {
-        console.log('User list accessed');
         res.render('users');
     }
 };
