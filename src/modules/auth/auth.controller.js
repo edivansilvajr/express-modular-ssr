@@ -1,4 +1,7 @@
-const users = [{ username: 'edivan', password: '123456' }];
+const users = [
+    { id: 1, username: 'edivan', password: '123456', role: 'admin' },
+    { id: 2, username: 'gisele', password: '654321', role: 'standard' }
+];
 
 module.exports = {
     showLoginPage: (req, res) => {
@@ -21,7 +24,7 @@ module.exports = {
                 return res.redirect('/auth/login');
             }
 
-            req.session.user = user;
+            req.session.user = { id: user.id, username: user.username, role: user.role };
 
             res.redirect('/dashboard');
         } catch (error) {

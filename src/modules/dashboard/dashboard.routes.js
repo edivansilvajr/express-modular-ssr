@@ -5,6 +5,6 @@ const { isAuthenticated, isAuthorized } = require('../../middlewares/auth.middle
 const router = Router();
 
 router.get('/dashboard', isAuthenticated, dashboardController.showDashboard);
-router.get('/dashboard/users', isAuthenticated, isAuthorized, dashboardController.showDashboard);
+router.get('/dashboard/users', isAuthenticated, isAuthorized, dashboardController.users);
 
 module.exports = router;
