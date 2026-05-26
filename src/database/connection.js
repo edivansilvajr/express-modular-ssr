@@ -6,14 +6,9 @@ const pool = new Pool({
 });
 
 async function query(queryString, params) {
-    try {
-        const result = await pool.query(queryString, params);
-        console.log(`Query success: ${result.command}`);
-        return result;
-    } catch (error) {
-        throw error;
-    }
-
+    const result = await pool.query(queryString, params);
+    console.log(`Query success: ${result.command}`);
+    return result;
 }
 
 async function getClient() {
