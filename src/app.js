@@ -1,6 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const flash = require('connect-flash-now/lib/flash');
+const methodOverride = require('method-override');
 const path = require('path');
 
 const app = express();
@@ -18,6 +19,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(express.urlencoded({ extended: true }));
+
+app.use(methodOverride('_method'));
 
 app.use(session({
     secret: env.sessionSecret,
